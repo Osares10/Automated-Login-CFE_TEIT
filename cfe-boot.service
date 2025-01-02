@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Captive Portal Boot Script
+
+[Service]
+ExecStart=/home/pi/cfe/cfe.sh
+User=pi
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+StandardOutput=append:/home/pi/cfe/cfe.log
+StandardError=append:/home/pi/cfe/cfe.log
+
+[Install]
+WantedBy=multi-user.target
